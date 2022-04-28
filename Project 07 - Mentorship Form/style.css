@@ -33,6 +33,7 @@ body{
   background-color: var(--bg-color);
 }
 .page{
+  padding-bottom: 360px;
   max-width: 750px;
   margin: auto;
 }
@@ -56,6 +57,7 @@ header h1{
   font-size: var(--fs-heading);
   line-height: var(--lh-heading);
   margin-bottom: 18px;
+  font-weight: 400;
 }
 header p{
   font-family: var(--ff-texting);
@@ -73,24 +75,123 @@ fieldset{
   border: none;
   margin-bottom: 30px;
 }
-.info1{
-  display: flex;
-  flex-direction: row;
-  gap: 22px;
-}
 .formwrapper{
   display: flex;
   flex-direction: column;
-  gap: 30px;
+
 }
 legend{
   font-family: var(--ff-heading);
   font-size: var(--fs-headin2);
   line-height: var(--lh-heading2);
-
+  color: var(--hdr-color);
+  border-bottom: 1px solid #E6E6F0;
+  padding-bottom: 16px;
+  width: 100%;
 }
 .info, .info1{
   font-family: var(--ff-texting);
   font-size: var(--fs-texting);
   line-height: var(--lh-texting);
+  color: var(--p-color);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset h3{
+  font-family: var(--ff-heading);
+  font-size: var(--fs-button);
+  line-height: var(--lh-heading2);
+  color: hsla(228, 15%, 38%, 1);
+  text-transform: uppercase;
+}
+fieldset .info1, .info2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+fieldset .input-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+fieldset .input-wrapper2{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+fieldset h3{
+  margin-top: 32px;
+  font-weight: 400;
+}
+
+fieldset input{
+  background: #FAFAFC;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+  height: 56px;
+  padding: 10px;
+  font-family: var(--ff-texting);
+  font-size: var(--fs-texting);
+  line-height: var(--lh-texting);
+  color: var(--p-color);
+  margin-top: 8px;
+}
+
+.info2{
+  font-family: var(--ff-texting);
+  font-size: var(--fs-texting);
+  line-height: var(--lh-texting);
+  color: var(--p-color);
+}
+
+footer{
+  background-color: var(--hdr-color);
+  height: 160px;
+  width: auto;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  width: 608px;
+  background: #FF5374;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: 400;
+}
+
+.button:hover{
+  background: #fe2e58;
+  border-style: outset;
+}
+
+@media (max-width: 500px){
+fieldset .info1, .info2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  fieldset .input-wrapper, .input-wrapper2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  fieldset input{
+    width: 100%;
+  }
 }

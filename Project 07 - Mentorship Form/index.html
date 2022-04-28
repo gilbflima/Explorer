@@ -20,10 +20,14 @@
    <fieldset class="formwrapper">
     <legend>Informações pessoais</legend>
     <div class="info1">
+      <div class="input-wrapper">
       <label for="name">Nome</label>
       <input type="text" id="name" required>
+    </div>
+    <div class="input-wrapper">
       <label for="surname">Sobrenome</label>
       <input type="text" id="surname" required>
+    </div>
     </div>
     <div class="info">
       <label for="email">Email <span>(digite um email válido)</span></label>
@@ -34,7 +38,7 @@
       <input type="password" id="password" required minlength="6">
     </div>
    </fieldset>
-   <fieldse class="formwrapper">
+   <fieldset class="formwrapper">
      <legend>Informações do mentor</legend>
      <div class="info">
        <label for="mentor-name">Nome do seu mentor <span>(só o primeiro nome)</span></label>
@@ -43,29 +47,41 @@
    </fieldset>
    <fieldset class="formwrapper">
      <legend>Seus horários disponíveis</legend>
-     <div class="info">
-       <h3>primeira mentoria</h3>
+     <h3>primeira mentoria</h3>
+       <div class="info2">        
+       <div class="input-wrapper">
        <label for="date">Data</label>
        <input type="date" id="date" required>
+      </div>
+      <div class=".input-wrapper2">
        <label for="from">Das</label>
        <input type="time" id="from" required>
+      </div>
+      <div class=".input-wrapper2">
        <label for="until">Até</label>
        <input type="time" id="until" required>
       </div>
-     <div class="info">
-       <h3>segunda mentoria</h3>
+      </div>
+      <h3>segunda mentoria</h3>
+     <div class="info2">       
+      <div class="input-wrapper">
        <label for="date2">Data</label>
        <input type="date" id="date2" required>
+      </div>
+      <div class=".input-wrapper2">
        <label for="from2">Das</label>
        <input type="time" id="from2" required>
+      </div>
+      <div class=".input-wrapper2">
        <label for="until2">Até</label>
        <input type="time" id="until2" required>
       </div>
+      </div>
    </fieldset>
-   <footer>
-    <input class="button" type="submit" form="my-form" value="Salvar"></input>
-  </footer>
   </form>
+  <footer>
+   <input class="button" type="submit" form="my-form" value="Salvar"></input>
+ </footer>
 </div>
 </body>
 </html>
