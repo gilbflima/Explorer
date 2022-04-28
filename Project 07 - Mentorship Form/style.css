@@ -178,6 +178,7 @@ footer{
 .button:hover{
   background: #fe2e58;
   border-style: outset;
+  cursor: pointer;
 }
 
 @media (max-width: 500px){
