@@ -22,7 +22,7 @@
   --bg-color: hsla(0, 0%, 94%, 1);
   --h2-color: hsla(228, 15%, 38%, 1);
   --p-color: hsla(258, 9%, 32%, 1);
-  --sp-color: hsla(258, 14%, 77%, 1);
+  --sp-color: rgb(112, 111, 117);
 
 }
 
@@ -106,6 +106,13 @@ fieldset h3{
   color: hsla(228, 15%, 38%, 1);
   text-transform: uppercase;
 }
+span{
+  font-size: var(--fs-span);
+  line-height: var(--lh-span);
+  color: var(--sp-color);
+  margin-left: 5px;
+}
+
 fieldset .info1, .info2{
   display: flex;
   flex-direction: row;

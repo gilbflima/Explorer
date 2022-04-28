@@ -26,7 +26,7 @@ body::before{
 
 .page {
   width: 736px;
-  margin: 25%;
+  margin: auto;
 }
 
 header{
@@ -191,6 +191,7 @@ footer{
   line-height: 26px;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 footer .button:hover{
