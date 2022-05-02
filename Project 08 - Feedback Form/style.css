@@ -44,7 +44,7 @@ body:before{
 }
 .page{
   margin: auto;
-  max-width: 750px;
+  max-width: 1000px;
   padding-bottom: 392px;
 }
 header{
@@ -84,13 +84,14 @@ header p{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 50px 275px;
+  padding: 50px 0px;
 }
 
 form{
   background-color: var(--form-color);
-  height: 1075px;
+  height: clamp(1075px, 1075+50vw, 1400px);
   padding: 14px 64px 64px 64px;
+  border-radius: 0px 0px 20px 20px;
 }
 fieldset{
   border: none;
@@ -101,6 +102,12 @@ fieldset .fieldset-wrapper:nth-child(1){
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+form fieldset:nth-child(3) > .fieldset-wrapper{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}
+
 fieldset .input-wrapper{
   font-family: var(--ff-texting);
   font-size: var(--fs-texting);
@@ -142,8 +149,8 @@ fieldset legend{
   text-align: center;
   display: inline-block;
   padding-bottom: 8px;
-  width: 620px;
-  padding-top: 16px;
+  width: 100%;
+  padding-top: 30px;
 }
 fieldset select{
   appearance: none;
@@ -151,6 +158,7 @@ fieldset select{
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: right 15px top 50%;
+  
 }
 
 fieldset .checkbox-wrapper{
@@ -176,8 +184,9 @@ fieldset .checkbox-wrapper label{
 }
 .checkbox-wrapper label:before{
   content:'';
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  max-height: 24px;
   background: #FAFAFC;
   border: 1px solid #E6E6F0;
   border-radius: 8px;
@@ -190,4 +199,37 @@ fieldset .checkbox-wrapper label{
 
 .checkbox-wrapper input:focus + label:before{
   outline: 2px solid black;
+}
+
+button{
+  margin-top: 6rem;
+  width: 100%;
+  height: 51px;
+  padding: 12px 40px;
+  border-radius: 8px;
+  border-style: none;
+  color: white;
+  background-color: var(--head-color);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: 400;
+}
+
+button:hover{
+  border:2px solid rgb(139, 0, 0);
+  cursor: pointer;
+}
+
+@media (max-width: 550px){
+  fieldset .fieldset-wrapper:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  form fieldset:nth-child(3) > .fieldset-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
