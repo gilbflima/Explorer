@@ -49,6 +49,8 @@ header{
 }
 header svg{
   margin: 26px 0;
+  position: relative;
+  animation: coming 2s;
 }
 
 .title::before{
@@ -71,6 +73,7 @@ header svg{
   color: white;
   letter-spacing: 0.05em;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  animation: fadein 2.5s;
 }
 main{
   padding: 15px 0 60px;
@@ -84,16 +87,24 @@ main p{
   color: var(--text-color);
   margin-bottom: 63px;
   font-weight: 400;
+  animation: fadeintext 3.5s;
 }
 .card img{
   max-width: clamp(20rem, 20rem + 30vw, 32rem);
   height: auto;
   object-fit: cover;
   border-radius: 20px;
+  transition: all 400ms;
+  transition-timing-function: ease-out;
+}
+.card img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .card{
   position: relative;
   margin-bottom: 3.6rem;
+  animation: enter 4.5s;
 }
 .card h2{
   position: absolute;
@@ -108,10 +119,73 @@ main p{
   border-radius: 20px;
   padding: 0 20px;
   letter-spacing: 0.05em;
+  animation: enter2 4.5s;
 }
 
 @media (max-width: 40rem){
   body{
     width: auto;
   }
+}
+
+@keyframes coming{
+  0%{
+    opacity: 0;
+    width:2px;
+    height: 4px;
+  }
+  100%{
+    opacity: 1;
+    width: 166px;
+    height: 164px;
+  }
+}
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes fadeintext{
+  0%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
+}
+@keyframes enter{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100%{
+    opacity: 1;
+  }
+
+}
+@keyframes enter2{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100%{
+    opacity: 1;
+  }
+
 }
