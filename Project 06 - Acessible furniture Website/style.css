@@ -23,29 +23,6 @@
   animation: upside_down 700ms reverse;
 }
 
-@media (min-width: 700px){
-  :root{
-    --fs-heading: 5.6rem;
-  }
- 
-  main{
-    grid-template-areas: "a a b"
-    "c d d";
-  }
-  main div:nth-child(1){
-    grid-area: a;
-  }
-  main div:nth-child(2){
-    grid-area: b;
-  }
-  main div:nth-child(3){
-    grid-area: c;
-  }
-  main div:nth-child(4){
-    grid-area: d;
-  }
-}
-
 img{
   width: 100%;
   height: auto;
@@ -124,19 +101,7 @@ body span{
   width: fit-content;
 }
 
-@keyframes topdown{
-  0%{
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
 @keyframes upside_down{
-  
   100%{
     opacity: 0;
     transform: translateY(15px);
