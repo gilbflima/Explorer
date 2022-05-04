@@ -6,27 +6,24 @@
 :root{
   font-size: 62.5%;
   --ff-heading:'Staatliches', cursive;
-  --fs-heading: 4rem;
+  --fs-heading: clamp(4rem, 4rem + 5vw, 4.8rem);
   --lh-heading: 3.4rem;
   --fs-heading2: 2rem;
   --ff-texting:'Palanquin', sans-serif;
-  --fs-texting: 2rem;
-  --lh-texting: 2rem;
-  --hdr-color: hsla(218, 17%, 62%, 1);
-  --title-color: hsla(275, 18%, 79%, 1);
-  --bg-color: hsla(233, 100%, 97%, 1);
-  --label-color: hsla(312, 91%, 96%, 1);
-  --text-color: hsla(232, 17%, 35%, 1);  
+  --fs-texting: clamp(1rem, 1.2rem + 2vw, 2rem);
+  --lh-texting: clamp(1.6rem, 1.8rem + 5vw, 2.8rem);
+  --hdr-color: #8e9aaf;
+  --title-color: #cbc0d3;
+  --bg-color: #f0f1ff;
+  --label-color: #feecfa;
+  --text-color: #4a4e68;  
 }
 body{
   background-color: var(--bg-color);
-  width: 38.6rem;
-  height: 200rem;
+  width: auto;
+  height: 100%;
   padding: 0 3.2rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+
 }
 body::before{
   content: '';
@@ -40,12 +37,17 @@ body::before{
   z-index: -1;
 }
 .page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   margin: auto;
   min-width: fit-content;
+  gap: clamp(5rem, 10rem + 10vw, 20rem);
 }
 header{
-  width: 100%;
-  height: 27.9rem;
+  width: 30.2rem;
+  height: 50rem;
 }
 header svg{
   margin: 26px 0;
@@ -75,22 +77,22 @@ header svg{
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   animation: fadein 2.5s;
 }
-main{
-  padding: 15px 0 60px;
-  max-width: 38.4rem;
-}
-main p{
-  max-width: 30rem;
+header p{
+  max-width: 38.6rem;
   font-family: var(--ff-texting);
   font-size: var(--fs-texting);
   line-height: var(--lh-texting);
   color: var(--text-color);
-  margin-bottom: 63px;
+  margin-top: 85px;
   font-weight: 400;
-  animation: fadeintext 3.5s;
+  animation: fadein 3.5s;
+}
+main{
+  padding: 50px 0;
+  width: auto;
 }
 .card img{
-  max-width: clamp(20rem, 20rem + 30vw, 32rem);
+  width: clamp(20rem, 20rem + 30vw, 30.2rem);
   height: auto;
   object-fit: cover;
   border-radius: 20px;
@@ -103,8 +105,8 @@ main p{
 }
 .card{
   position: relative;
-  margin-bottom: 3.6rem;
-  animation: enter 4.5s;
+  animation: upside 4.5s;
+  margin-bottom: 3rem;
 }
 .card h2{
   position: absolute;
@@ -113,18 +115,88 @@ main p{
   font-size: var(--fs-heading2);
   line-height: var(--lh-heading);
   font-weight: 400;
-  left: clamp(14rem, 16rem + 5vw, 20rem);
+  left: clamp(12rem, 14rem + 5vw, 19rem);
   top: 2rem;
   background: var(--label-color);
   border-radius: 20px;
   padding: 0 20px;
   letter-spacing: 0.05em;
-  animation: enter2 4.5s;
+  animation: downside 4.5s;
 }
 
-@media (max-width: 40rem){
-  body{
+footer{
+  max-width: 100rem;
+  font-family: var(--ff-texting);
+  font-size: var(--fs-texting);
+  line-height: var(--lh-texting);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer a{
+  text-decoration: none;
+  color: rgb(32, 34, 46);
+  gap: 5px;
+}
+
+footer a:hover{
+  color: #8a3579;
+  font-weight: bold;
+}
+
+@media (min-width: 70rem){
+
+  header p{
+    color: white;
+  }
+  .page{
     width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+  }
+  body::before{
+    width: 0%;
+    height: 100%;
+  }
+  .title::before{
+    width: 38.6rem;
+  }
+  main{
+    display: grid;
+    grid-template-areas: 
+    "B C E"
+    "A C F"
+    "A C F"
+    "A D F"
+    "G G G";
+    gap: 3rem;
+  }
+  main div:nth-child(1){
+    grid-area: A;
+  }
+  main div:nth-child(2){
+    grid-area: B;
+  }
+  main div:nth-child(3){
+    grid-area: C;
+  }
+  main div:nth-child(4){
+    grid-area: D;
+  }
+  main div:nth-child(5){
+    grid-area: F;
+  }
+  main div:nth-child(6){
+    grid-area: E;
+  }
+  main footer{
+    grid-area: G;
+  }
+  .card{
+    margin-bottom: 0;
   }
 }
 
@@ -151,19 +223,20 @@ main p{
     opacity: 1;
   }
 }
-@keyframes fadeintext{
+@keyframes upside{
   0%{
     opacity: 0;
   }
-  90%{
+  80%{
     opacity: 0;
+    transform: translateY(15px);
   }
   100%{
     opacity: 1;
   }
 
 }
-@keyframes enter{
+@keyframes downside{
   0%{
     opacity: 0;
   }
@@ -174,18 +247,4 @@ main p{
   100%{
     opacity: 1;
   }
-
-}
-@keyframes enter2{
-  0%{
-    opacity: 0;
-  }
-  80%{
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100%{
-    opacity: 1;
-  }
-
 }
