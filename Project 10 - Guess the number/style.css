@@ -56,7 +56,7 @@ form{
   display: flex;
   justify-content: center;
 }
-.hide{
+.screen2{
   display: none;
 }
 input, button{
