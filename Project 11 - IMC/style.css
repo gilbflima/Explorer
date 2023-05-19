@@ -101,3 +101,20 @@ button{
 button:hover{
   background-color: #045b76;;
 }
+
+/* modal */
+
+.modal-wrapper{
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: grid;
+  place-content: center;
+}
+
+.modal-wrapper button{
+  background: none;
+  border: none;
+}
+
