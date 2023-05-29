@@ -81,7 +81,7 @@ form input::placeholder{
   margin-top: 1.6rem;
 }
 
-button{
+.container button{
   margin-top: 3.2rem;
   padding: 1.6rem;
   width: 100%;
@@ -104,6 +104,11 @@ button:hover{
 
 /* modal */
 
+.modal-wrapper.visible{
+  opacity: 1;
+  visibility: visible;
+}
+
 .modal-wrapper{
   position: absolute;
   inset: 0;
@@ -111,10 +116,50 @@ button:hover{
 
   display: grid;
   place-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal{
+  position: relative;
 }
 
 .modal-wrapper button{
   background: none;
   border: none;
+
+  position: absolute;
+  top:1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+
+  transition: transform .3s;
 }
 
+.modal-wrapper button:hover{
+  transform: scale(1.2);
+}
+
+/*alert error*/
+.alert-error{
+  position: absolute;
+  background-color: var(--bg-error);
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--txt-error);
+  padding: .8rem 0;
+  font-weight: bold;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+  transition: transform .5s;
+}
+
+.alert-error.visible{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
