@@ -15,9 +15,9 @@ form.onsubmit = event => {
   const weight = inputWeight.value
   const height = inputHeight.value
 
-  const showAlertError = notANumber (weight) || notANumber (height)
+  const weightOrHeightIsNotANumber = notANumber (weight) || notANumber (height)
 
-  if (showAlertError) {
+  if (weightOrHeightIsNotANumber) {
     AlertError.visible()
     return;
   }
@@ -30,4 +30,5 @@ form.onsubmit = event => {
   Modal.message.innerText = message
   Modal.visible()
 }
-
+inputHeight.oninput = () => AlertError.invisible()
+inputWeight.oniput = () => AlertError.invisible()
